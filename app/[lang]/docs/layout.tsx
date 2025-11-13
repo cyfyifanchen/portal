@@ -1,4 +1,4 @@
-import { DocsLayout } from 'fumadocs-ui/layouts/notebook'
+import { DocsLayout } from 'fumadocs-ui/layouts/docs'
 import type { ReactNode } from 'react'
 import { Banner } from '@/components/layout/sidebar'
 import { Footer } from '@/components/ui/footer'
@@ -16,26 +16,26 @@ export default async function Layout({
 }) {
   const { lang } = await params
 
-  const { nav, ...layoutProps } = baseOptions(lang)
+  const layoutProps = baseOptions(lang)
 
   return (
-    <DocsLayout
-      {...layoutProps}
-      nav={{ ...nav, mode: 'top' }}
-      tabMode='sidebar'
-      tree={source.pageTree[lang]}
-      sidebar={{
-        banner: Banner,
-        tabs: {
-          transform: (option) => {
-            if (option?.description?.toString().startsWith('v')) return null
-            return option
+    <div className='docs-theme'>
+      <DocsLayout
+        {...layoutProps}
+        tree={source.pageTree[lang]}
+        sidebar={{
+          banner: <Banner />,
+          tabs: {
+            transform: (option) => {
+              if (option?.description?.toString().startsWith('v')) return null
+              return option
+            }
           }
-        }
-      }}
-    >
-      {children}
-      <Footer />
-    </DocsLayout>
+        }}
+      >
+        {children}
+        <Footer />
+      </DocsLayout>
+    </div>
   )
 }

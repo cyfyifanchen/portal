@@ -1,13 +1,15 @@
 {
+  "title": "Introduction",
+  "description": "Landing pages for TEN docs",
+  "root": true,
   "pages": [
-    "---Introduction---",
     "index",
     "goal",
     "key_concepts",
     "application_scenarios",
     "---TEN Framework---",
     "...ten_framework",
-    "---TEN Agent---",
+    "---TEN Agent Examples---",
     "ten_agent"
   ]
 }

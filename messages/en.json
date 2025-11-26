@@ -41,7 +41,8 @@
     "heroBtnTryTenAgent": "Talk to TEN Agent",
     "huggingFaceSpace": "Try VAD and Turn Detection",
     "heroBtnReadDoc": "Documentation",
-    "bannerAnnouncement": "are now part of the TEN open-source ecosystem!"
+    "bannerAnnouncement": "are now part of the TEN open-source ecosystem!",
+    "announcementWebSockets": "TEN supports WebSockets now!"
   },
   "hackathon": {
     "title": "TEN Dev Challenge 2025",

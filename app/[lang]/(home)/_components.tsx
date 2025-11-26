@@ -7,12 +7,8 @@ import * as React from 'react'
 import { AwardBadge } from '@/components/ui/award-badge'
 
 import { Button } from '@/components/ui/button'
-import {
-  HUGGING_FACE_SPACE,
-  URL_TEN_AGENT,
-  URL_TEN_TURN_DETECTION,
-  URL_TEN_VAD
-} from '@/constants'
+import { HeroPill } from '@/components/ui/hero-pill'
+import { HUGGING_FACE_SPACE, URL_TEN_AGENT } from '@/constants'
 import { Link } from '@/lib/next-intl-navigation'
 import { cn } from '@/lib/utils'
 import { SAMPLE_PROJECTS } from './sample-projects'
@@ -132,30 +128,26 @@ export function Hero(props: { className?: string }) {
               variant='secondary'
               size='sm'
               className='h-auto gap-2 bg-blue-600/[0.05] px-3 py-2 text-blue-600 transition-all duration-600 hover:scale-105 hover:bg-blue-600/[0.08] hover:text-blue-500 sm:h-8 sm:px-4 sm:py-0'
-              asChild
             >
-              <span className='inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 whitespace-normal text-center'>
-                🎉{' '}
-                <Link
-                  href={URL_TEN_VAD}
-                  className='font-medium text-blue-500 text-sm underline-offset-2 hover:underline sm:text-base dark:text-blue-300'
-                >
-                  TEN VAD
-                </Link>
-                <span className='font-medium text-blue-500 text-sm sm:text-base dark:text-blue-300'>
-                  and
-                </span>
-                <Link
-                  href={URL_TEN_TURN_DETECTION}
-                  className='font-medium text-blue-500 text-sm underline-offset-2 hover:underline sm:text-base dark:text-blue-300'
-                >
-                  TEN Turn Detection
-                </Link>
-                <span className='font-medium text-blue-500 text-sm sm:text-base dark:text-blue-300'>
-                  are now part of the TEN open-source ecosystem!
-                </span>
+              <span className='inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 whitespace-normal text-center font-medium text-blue-500 text-sm sm:text-base dark:text-blue-300'>
+                {t('announcementWebSockets')}
               </span>
             </Button>
+          </div>
+          <div className='flex flex-wrap items-center justify-center gap-2'>
+            <HeroPill
+              href='https://badget.tech/blog/introducing-Badget-ai'
+              label='Introducing Badget.ai'
+              announcement='📣 Announcement'
+              isExternal
+              className='bg-[hsl(187,80.8%,34.7%)]/20 ring-[hsl(210,40%,96.1%)] [&_div]:bg-[hsl(210,40%,96.1%)] [&_div]:text-[hsl(187,80.8%,34.7%)] [&_p]:text-[hsl(187,80.8%,34.7%)] [&_svg_path]:fill-[hsl(187,80.8%,34.7%)]'
+            />
+            <HeroPill
+              href='https://supavec-ship-letter.beehiiv.com/p/supavec-s-first-update-tysm-for-joining'
+              label='PDF files are now supported'
+              announcement='🛠️ New'
+              isExternal
+            />
           </div>
 
           <div className='relative z-10 flex flex-col items-center gap-4'>

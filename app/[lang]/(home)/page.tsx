@@ -24,12 +24,14 @@ const BackgroundVideo = () => {
       window.matchMedia('(pointer: coarse)').matches
     const isSmallViewport =
       typeof window !== 'undefined' && window.innerWidth < 768
+    type NetInfo = { saveData?: boolean; effectiveType?: string }
+    type NavigatorWithConnection = Navigator & { connection?: NetInfo }
     const saveData =
       typeof navigator !== 'undefined' &&
-      (navigator as any).connection?.saveData
+      (navigator as NavigatorWithConnection).connection?.saveData
     const effectiveType =
       typeof navigator !== 'undefined' &&
-      (navigator as any).connection?.effectiveType
+      (navigator as NavigatorWithConnection).connection?.effectiveType
     const isSlowNetwork =
       effectiveType && ['2g', '3g', 'slow-2g'].includes(effectiveType)
 

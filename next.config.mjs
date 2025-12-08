@@ -3,10 +3,11 @@ import createNextIntlPlugin from 'next-intl/plugin'
 
 const withMDX = createMDX()
 const withNextIntl = createNextIntlPlugin('./lib/next-intl-requests.ts')
+const useTurbopack = process.env.NEXT_TURBO === 'true'
 
 /** @type {import('next').NextConfig} */
 const config = {
-  turbopack: false,
+  turbopack: useTurbopack,
   images: {
     dangerouslyAllowLocalIP: true,
     remotePatterns: [

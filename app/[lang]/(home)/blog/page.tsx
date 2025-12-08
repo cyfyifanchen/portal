@@ -1,8 +1,8 @@
-import NextLink from 'next/link'
 import { getFormatter, getTranslations } from 'next-intl/server'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { i18n } from '@/lib/i18n'
+import { Link } from '@/lib/next-intl-navigation'
 import { blog } from '@/lib/source'
 import {
   AuthorBadge,
@@ -100,7 +100,7 @@ export default async function BlogHomePage(props: {
             return (
               <Card className='group hover:-translate-y-2 w-full overflow-hidden border-border/60 bg-background/80 shadow-lg transition-all duration-500 hover:shadow-2xl'>
                 <div className='grid gap-0 md:grid-cols-[1.6fr_1fr]'>
-                  <NextLink
+                  <Link
                     href={featuredPost.url}
                     locale={locale}
                     className='group/cover relative block h-full'
@@ -116,7 +116,7 @@ export default async function BlogHomePage(props: {
                         title={frontmatter.title}
                       />
                     </div>
-                  </NextLink>
+                  </Link>
 
                   <div className='flex flex-col gap-6 p-6 md:p-8'>
                     <div className='flex flex-col gap-4'>
@@ -124,13 +124,13 @@ export default async function BlogHomePage(props: {
                         {published}
                       </time>
                       <h2 className='text-left font-semibold text-2xl text-foreground leading-tight transition-colors duration-300 group-hover:text-primary'>
-                        <NextLink
+                        <Link
                           href={featuredPost.url}
                           locale={locale}
                           className='hover:underline'
                         >
                           {frontmatter.title}
-                        </NextLink>
+                        </Link>
                       </h2>
                       {frontmatter.description && (
                         <p className='text-base text-muted-foreground leading-relaxed'>
@@ -176,7 +176,7 @@ export default async function BlogHomePage(props: {
                   key={post.url}
                   className='group hover:-translate-y-2 flex h-full flex-col overflow-hidden border-border/60 bg-background/70 shadow-sm transition-all duration-300 hover:shadow-xl'
                 >
-                  <NextLink
+                  <Link
                     href={post.url}
                     locale={locale}
                     className='group/cover relative block'
@@ -191,20 +191,20 @@ export default async function BlogHomePage(props: {
                         title={frontmatter.title}
                       />
                     </div>
-                  </NextLink>
+                  </Link>
 
                   <CardHeader className='flex flex-col gap-3 px-6 pt-6'>
                     <time className='font-medium text-[0.7rem] text-muted-foreground uppercase tracking-wide'>
                       {published}
                     </time>
                     <h2 className='text-left font-semibold text-foreground text-xl leading-snug transition-colors duration-300 group-hover:text-primary'>
-                      <NextLink
+                      <Link
                         href={post.url}
                         locale={locale}
                         className='hover:underline'
                       >
                         {frontmatter.title}
-                      </NextLink>
+                      </Link>
                     </h2>
                   </CardHeader>
 

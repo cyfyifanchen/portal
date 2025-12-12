@@ -6,7 +6,9 @@ const withNextIntl = createNextIntlPlugin('./lib/next-intl-requests.ts')
 
 /** @type {import('next').NextConfig} */
 const config = {
-  turbopack: false,
+  experimental: {
+    workerThreads: false
+  },
   images: {
     dangerouslyAllowLocalIP: true,
     remotePatterns: [

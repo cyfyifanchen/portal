@@ -1,4 +1,9 @@
 {
+  "cookieConsent": {
+    "message": "We use cookies and analytics to improve your experience.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
   "nav": {
     "docs": "Documentation",
     "blog": "Blog",
@@ -26,7 +31,15 @@
     "readMore": "Read more",
     "backToBlog": "Back to Blog",
     "writtenBy": "Written by",
-    "publishedOn": "Published on"
+    "publishedOn": "Published on",
+    "categories": {
+      "all": "All",
+      "releases": "Releases",
+      "tutorials": "Tutorials",
+      "community": "Community",
+      "events": "Events"
+    },
+    "noPostsInCategory": "No posts in this category yet."
   },
   "homePage": {
     "titlePrefix": "Build",

@@ -15,6 +15,23 @@
   [[plugins.inputs.audits]]
     path = "/"
 
+## QC article proxy (Edge)
+[[edge_functions]]
+  path = "/article"
+  function = "proxy-article"
+
+[[edge_functions]]
+  path = "/article/*"
+  function = "proxy-article"
+
+[[edge_functions]]
+  path = "/assets/*"
+  function = "proxy-article"
+
+[[edge_functions]]
+  path = "/category/*"
+  function = "proxy-article"
+
 ## Redirect doc.theten.ai root to the main docs
 [[redirects]]
   from = "http://doc.theten.ai/"
